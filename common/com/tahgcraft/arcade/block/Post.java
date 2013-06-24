@@ -9,8 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class Post extends Block {
-
-    public static int renderId = -1;
     
     public Post(int id) {
         super(id, Material.iron);
@@ -31,10 +29,14 @@ public class Post extends Block {
     }
     
     public int getRenderType() {
-        return renderId;
+        return -1;
     }
     
     public TileEntity createTileEntity(World  world, int metadata) {
         return new TileEntityPost();
+    }
+    
+    public boolean hasTileEntity() {
+        return true;
     }
 }

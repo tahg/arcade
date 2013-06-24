@@ -5,6 +5,7 @@ import net.minecraftforge.common.Configuration;
 import com.tahgcraft.arcade.block.Post;
 import com.tahgcraft.arcade.item.ItemPost;
 import com.tahgcraft.arcade.lib.Reference;
+import com.tahgcraft.arcade.tileentity.TileEntityPost;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -41,6 +42,7 @@ public class Arcade {
     public void load(FMLInitializationEvent event) {
         post = new Post(blockIdPost);
         GameRegistry.registerBlock(post, "BlockPost");
+        GameRegistry.registerTileEntity(TileEntityPost.class, "tileArcadePost");
         proxy.registerTileEntitySpecialRenderer();
     }
     

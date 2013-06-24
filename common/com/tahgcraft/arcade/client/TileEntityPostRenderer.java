@@ -16,6 +16,8 @@ public class TileEntityPostRenderer extends TileEntitySpecialRenderer {
     @Override
     public void renderTileEntityAt(TileEntity tileentity, double x, double y,
             double z, float partialTick) {
+        System.out.println("Rendering Post");
+
         render((TileEntityPost) tileentity, x, y, z, partialTick);
     }
 
