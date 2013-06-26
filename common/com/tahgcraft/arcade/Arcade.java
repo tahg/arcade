@@ -22,6 +22,7 @@ public class Arcade {
     private int blockIdPost;
     private int itemIdPost;
     public static Post post;
+    public static ItemPost itemPost;
     @SidedProxy(clientSide = "com.tahgcraft.arcade.client.ClientProxy", serverSide = "com.tahgcraft.arcade.CommonProxy")
     public static CommonProxy proxy;
     
@@ -41,9 +42,11 @@ public class Arcade {
     @Init
     public void load(FMLInitializationEvent event) {
         post = new Post(blockIdPost);
-        GameRegistry.registerBlock(post, "BlockPost");
-        GameRegistry.registerTileEntity(TileEntityPost.class, "tileArcadePost");
+        GameRegistry.registerBlock(post, "BlockArcadePost");
+        GameRegistry.registerTileEntity(TileEntityPost.class, "TileArcadePost");
         proxy.registerTileEntitySpecialRenderer();
+        itemPost = new ItemPost(itemIdPost);
+        GameRegistry.registerItem(itemPost, "ItemArcadePost");
     }
     
     @PostInit
